@@ -1,4 +1,4 @@
-﻿/*using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
@@ -19,7 +19,10 @@ public class LootTableDatabaseEditorWindow : EditorWindow
         window.Show();
 
     }
-    
+
+    string[] options = new string[1];
+    int indexno = 0;
+
     private void Populate()
     {
         allFiles = new List<string>();
@@ -36,15 +39,25 @@ public class LootTableDatabaseEditorWindow : EditorWindow
 
     private void OnGUI()
     {
+        options[0] = "EmeraldKatana";
         Header.alignment = TextAnchor.UpperCenter;
         Header.fontStyle = FontStyle.BoldAndItalic;
         Header.fontSize = 50;
         Header.normal.textColor = Color.cyan;
         GUILayout.Label("You shouldn't be here...", Header);
         GUILayout.Space(25);
-        if (GUILayout.Button("This is a Button")) { }
+        GUILayout.BeginHorizontal();
+        EditorGUILayout.Popup(indexno, options);
+        if (GUILayout.Button("Create New"))
+        {
+            switch (indexno)
+            {
+                case 0:
+
+            }
+        }
+        GUILayout.EndHorizontal();
         foreach (var file in allFiles)
             EditorGUILayout.TextField("Table File:", file);
     }
 }
-*/
