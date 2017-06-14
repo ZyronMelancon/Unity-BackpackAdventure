@@ -27,7 +27,6 @@ public class PlayerMovement : MonoBehaviour {
             else { }
         else
             body.velocity = new Vector2(body.velocity.x * 0.9f, body.velocity.y);
-        Jump();
 	}
 
     IEnumerator Jump()
